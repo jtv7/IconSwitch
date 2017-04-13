@@ -336,7 +336,7 @@ class ViewDragHelper {
     public boolean continueSettling(boolean deferCallbacks) {
         if (mDragState == STATE_SETTLING) {
             boolean keepGoing = mScroller.computeScrollOffset();
-            Log.d("tag", "keepGoing: " + keepGoing);
+            //Log.d("tag", "keepGoing: " + keepGoing);
             final int x = mScroller.getCurrX();
             final int y = mScroller.getCurrY();
             final int dx = x - mCapturedView.getLeft();
@@ -977,9 +977,9 @@ class ViewDragHelper {
 
     private boolean isValidPointerForActionMove(int pointerId) {
         if (!isPointerDown(pointerId)) {
-            Log.e(TAG, "Ignoring pointerId=" + pointerId + " because ACTION_DOWN was not received "
-                    + "for this pointer before ACTION_MOVE. It likely happened because "
-                    + " ViewDragHelper did not receive all the events in the event stream.");
+            // Log.e(TAG, "Ignoring pointerId=" + pointerId + " because ACTION_DOWN was not received "
+            //         + "for this pointer before ACTION_MOVE. It likely happened because "
+            //         + " ViewDragHelper did not receive all the events in the event stream.");
             return false;
         }
         return true;
